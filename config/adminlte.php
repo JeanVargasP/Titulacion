@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'TILAPHYA',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'TILAPHYA',
 
     /*
     |--------------------------------------------------------------------------
@@ -248,7 +248,7 @@ return [
         ],
         [
             'text'        => 'Inicio',
-            'url'         => 'admin/home',
+            'url'         => '/home',
             'icon'        => 'fas fa-fw fa-home',
             //'label'       => 4,
            // 'label_color' => 'success',
@@ -259,7 +259,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Parametro 1(Temperatura)',
-                    'url'  => '#',
+                    'url'  => '/temperatura',
                     'icon' => 'fas fa-fw fa-temperature-low'
                 ],
                 [
@@ -273,6 +273,29 @@ return [
                     'text' => 'Parametro 3(turbiedad)',
                     'url'  => '#',
                     'icon' => 'fas fa-fw fa-signature'
+                ],
+                [
+                    'text' => 'Parametro 4(oxigeno)',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-water'
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Reportes',
+            'icon'    => 'fas fa-fw fa-history',
+            'submenu' => [
+                [
+                    'text' => 'General',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-industry'
+                ],
+                [
+                    'text'    => 'Por Parametro',
+                    'url'     => '#',
+                    'icon' => 'fas fa-fw fa-braille'
+                    
+                    
                 ],
             ],
         ],
@@ -365,7 +388,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
