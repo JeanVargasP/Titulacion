@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Grafico1;
+use Illuminate\Support\Facades\auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +25,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('temperatura', 'App\Http\Controllers\TemperaturaController');
+
+Route::get('Grafico1',[Grafico1::class,'index']);
+Route::resource('ph', 'App\Http\Controllers\PhController');

@@ -264,14 +264,14 @@ return [
                 ],
                 [
                     'text'    => 'Parametro 2(Ph)',
-                    'url'     => '#',
+                    'url'     => '/ph',
                     'icon' => 'fas fa-fw fa-hand-holding-water'
                     
                     
                 ],
                 [
                     'text' => 'Parametro 3(turbiedad)',
-                    'url'  => '#',
+                    'url'  => '',
                     'icon' => 'fas fa-fw fa-signature'
                 ],
                 [
@@ -287,7 +287,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'General',
-                    'url'  => '#',
+                    'url'  => 'Grafico1',
                     'icon' => 'fas fa-fw fa-industry'
                 ],
                 [

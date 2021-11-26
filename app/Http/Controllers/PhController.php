@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Models\Temperatura;
+use App\Models\Ph;
 use Illuminate\Http\Request;
 
-class TemperaturaController extends Controller
+class PhController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,19 +17,18 @@ class TemperaturaController extends Controller
      */
     public function index(Request $request)
     {
-
         $keyword = $request->get('search');
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $temperatura = Temperatura::where('descripcion', 'LIKE', "%$keyword%")
-                ->orWhere('Grados', 'LIKE', "%$keyword%")
+            $ph = Ph::where('descripcion', 'LIKE', "%$keyword%")
+                ->orWhere('Nivel', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $temperatura = Temperatura::latest()->paginate($perPage);
+            $ph = Ph::latest()->paginate($perPage);
         }
 
-        return view('temperatura.index', compact('temperatura'));
+        return view('ph.index', compact('ph'));
     }
 
     /**
@@ -39,7 +38,7 @@ class TemperaturaController extends Controller
      */
     public function create()
     {
-        return view('temperatura.create');
+        return view('ph.create');
     }
 
     /**
@@ -54,9 +53,9 @@ class TemperaturaController extends Controller
         
         $requestData = $request->all();
         
-        Temperatura::create($requestData);
+        Ph::create($requestData);
 
-        return redirect('temperatura')->with('flash_message', 'Temperatura added!');
+        return redirect('ph')->with('flash_message', 'Ph added!');
     }
 
     /**
@@ -68,9 +67,9 @@ class TemperaturaController extends Controller
      */
     public function show($id)
     {
-        $temperatura = Temperatura::findOrFail($id);
+        $ph = Ph::findOrFail($id);
 
-        return view('temperatura.show', compact('temperatura'));
+        return view('ph.show', compact('ph'));
     }
 
     /**
@@ -82,9 +81,9 @@ class TemperaturaController extends Controller
      */
     public function edit($id)
     {
-        $temperatura = Temperatura::findOrFail($id);
+        $ph = Ph::findOrFail($id);
 
-        return view('temperatura.edit', compact('temperatura'));
+        return view('ph.edit', compact('ph'));
     }
 
     /**
@@ -100,10 +99,10 @@ class TemperaturaController extends Controller
         
         $requestData = $request->all();
         
-        $temperatura = Temperatura::findOrFail($id);
-        $temperatura->update($requestData);
+        $ph = Ph::findOrFail($id);
+        $ph->update($requestData);
 
-        return redirect('temperatura')->with('flash_message', 'Temperatura updated!');
+        return redirect('ph')->with('flash_message', 'Ph updated!');
     }
 
     /**
@@ -115,8 +114,8 @@ class TemperaturaController extends Controller
      */
     public function destroy($id)
     {
-        Temperatura::destroy($id);
+        Ph::destroy($id);
 
-        return redirect('temperatura')->with('flash_message', 'Temperatura deleted!');
+        return redirect('ph')->with('flash_message', 'Ph deleted!');
     }
 }
