@@ -118,4 +118,16 @@ class PhController extends Controller
 
         return redirect('ph')->with('flash_message', 'Ph deleted!');
     }
+
+    public function chart(){
+        /**futuro borrar*/
+        $graficos = Ph::all();
+
+        $puntos=[];
+        foreach($graficos as $grafico){
+                $puntos[]=['name' => $grafico['descripcion'], 'y' => $grafico['Nivel']];
+                
+        }
+        return view('Grafico2',["data" => json_encode($puntos)]);
+   }
 }

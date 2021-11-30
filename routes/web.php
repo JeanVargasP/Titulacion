@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grafico1;
+use App\Http\Controllers\PhController;
 use Illuminate\Support\Facades\auth;
 
 
@@ -28,3 +29,5 @@ Route::resource('temperatura', 'App\Http\Controllers\TemperaturaController');
 
 Route::get('Grafico1',[Grafico1::class,'index']);
 Route::resource('ph', 'App\Http\Controllers\PhController');
+
+Route::get('Grafico2',[PhController::class,'chart']);

@@ -2,7 +2,7 @@
 
 @section('title', 'Titulacion')
 @section('content_header')
-    <h1>Temperatura</h1>
+    <h1>PH</h1>
 @stop
 @section('content')
     <div class="container">

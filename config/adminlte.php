@@ -271,7 +271,7 @@ return [
                 ],
                 [
                     'text' => 'Parametro 3(turbiedad)',
-                    'url'  => '',
+                    'url'  => '#',
                     'icon' => 'fas fa-fw fa-signature'
                 ],
                 [
@@ -292,7 +292,7 @@ return [
                 ],
                 [
                     'text'    => 'Por Parametro',
-                    'url'     => '#',
+                    'url'     => 'Grafico2',
                     'icon' => 'fas fa-fw fa-braille'
                     
                     
