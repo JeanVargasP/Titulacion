@@ -15,7 +15,7 @@ class Grafico1 extends Controller
 
          $puntos=[];
          foreach($graficos as $grafico){
-                 $puntos['name'][] = $grafico['descripcion'];
+                 $puntos['name'][] = $grafico['updated_at'];
                  
                  $puntos['datos'][] = $grafico['Grados'];
                  

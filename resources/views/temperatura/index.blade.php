@@ -4,7 +4,7 @@
 @section('content_header')
     <h1>Temperatura</h1>
 @stop
-
+    
 
 
 @section('content')
@@ -36,21 +36,25 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Descripcion</th><th>Grados</th><th>Tiempo</th><th>Acciones</th>
+                                        <th>#</th><th>Descripcion</th><th>Grados</th><th>Tiempo</th>><th>Estado</th><th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($temperatura as $item)
+                                        
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->descripcion }}</td><td>{{ $item->Grados }}</td><td>{{ $item->updated_at }}</td>
+                                        
+                                        <td>{{ $item->descripcion }}</td><td>{{ $item->Grados }}</td><td>{{ $item->updated_at }}</td><td>{{ $item->estado }}</td>
                                         <td>
                                             <a href="{{ url('/temperatura/' . $item->id) }}" title="View Temperatura"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
                                             <form method="POST" action="{{ url('/temperatura' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Temperatura" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
-                                            </form>
+                                                 </form>
+                                                
+                                        
                                         </td>
                                     </tr>
                                 @endforeach

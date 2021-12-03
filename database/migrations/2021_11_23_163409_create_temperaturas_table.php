@@ -19,6 +19,9 @@ class CreateTemperaturasTable extends Migration
             $table->timestamps();
             $table->string('descripcion')->nullable();
             $table->integer('Grados')->nullable();
+            $table->boolean('estado')->nullable()->default(false);
+            
+
             });
     }
 

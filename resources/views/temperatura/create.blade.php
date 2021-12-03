@@ -27,7 +27,7 @@
                             {{ csrf_field() }}
 
                             @include ('temperatura.form', ['formMode' => 'Agregar'])
-
+                            
                         </form>
 
                     </div>

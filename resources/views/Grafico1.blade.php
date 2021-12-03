@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <div class="row col-6">
+        <div class="row col-10">
                         <canvas id="myChart" width="400" height="200"></canvas>
                      
         </div>
@@ -27,7 +27,8 @@
     console.log(cData);
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        
+        type: 'line',
         data: {
         labels: cData.name,
         datasets: [{
@@ -61,6 +62,7 @@
     }
 });
 });
+
 
 </script>
 

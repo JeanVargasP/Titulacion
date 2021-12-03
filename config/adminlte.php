@@ -292,11 +292,24 @@ return [
                 ],
                 [
                     'text'    => 'Por Parametro',
-                    'url'     => 'Grafico2',
-                    'icon' => 'fas fa-fw fa-braille'
+                    'icon' => 'fas fa-fw fa-braille',
+                    'submenu' => [
+                            [
+                                'text' => 'Parametro 1(Temperatura)',
+                                'url'  => 'Grafico1',
+                                'icon' => 'fas fa-fw fa-temperature-low'
+                            ],
+                            [
+                                'text'    => 'Parametro 2(Ph)',
+                                 'url'     => 'Grafico2',
+                                'icon' => 'fas fa-fw fa-hand-holding-water'
+                    
+                            ],
                     
                     
+                                ],
                 ],
+                
             ],
         ],
         /*['header' => 'labels'],
@@ -398,7 +411,7 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
