@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grafico1;
 use App\Http\Controllers\PhController;
 use Illuminate\Support\Facades\auth;
+use App\Events\actualizartemperatura;
 
 
 /*
@@ -18,8 +19,15 @@ use Illuminate\Support\Facades\auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+//Route::get('/temperatura', function () {
+  //  event(new actualizartemperatura);
+  //  return view('temperatura');
+//});
+
+
 
 Auth::routes();
 
@@ -31,3 +39,9 @@ Route::get('Grafico1',[Grafico1::class,'index']);
 Route::resource('ph', 'App\Http\Controllers\PhController');
 
 Route::get('Grafico2',[PhController::class,'chart']);
+Route::get('general',[Grafico1::class,'index']);
+
+//Route::resource('temperatura', 'App\Http\Controllers\Api\temperaturaController');
+
+// Route::view('/temperatura', 'temperatura.showAll')->name('temperaturas.all');
+

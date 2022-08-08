@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\temperatura;
+use App\Models\ph;
+
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
+
+    
     /**
      * Create a new controller instance.
      *
@@ -23,6 +29,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
+        $celsiusa = temperatura::all();
+        $phsa = ph::all();
+        /*   $tilapia = HTTP::get('http://108.175.14.214:9001/api/v1/sensor-data/');
+        $actual= $tilapia->json();
+        $actual1 = head($actual);
+        return view('home', compact('actual1'));
+     */
+            $celsius = $celsiusa->last();
+            $phs = $phsa->last();
+       
+
+
+
+            return view('home',compact('celsius','phs'));
+        }
 }

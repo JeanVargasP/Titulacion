@@ -18,6 +18,13 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Events\actualizartemperatura'=>[
+            'App\Listeners\actualtemperatura',
+
+        ],
+        actualizartemperatura::class => [
+            actualtemperatura::class,
+        ]
     ];
 
     /**

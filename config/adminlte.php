@@ -258,24 +258,24 @@ return [
             'icon'    => 'fas fa-fw fa-list-ul',
             'submenu' => [
                 [
-                    'text' => 'Parametro 1(Temperatura)',
+                    'text' => 'Temperatura',
                     'url'  => '/temperatura',
                     'icon' => 'fas fa-fw fa-temperature-low'
                 ],
                 [
-                    'text'    => 'Parametro 2(Ph)',
+                    'text'    => 'Ph',
                     'url'     => '/ph',
                     'icon' => 'fas fa-fw fa-hand-holding-water'
                     
                     
                 ],
                 [
-                    'text' => 'Parametro 3(turbiedad)',
+                    'text' => 'Alimentacion',
                     'url'  => '#',
                     'icon' => 'fas fa-fw fa-signature'
                 ],
                 [
-                    'text' => 'Parametro 4(oxigeno)',
+                    'text' => 'Nivel De Agua',
                     'url'  => '#',
                     'icon' => 'fas fa-fw fa-water'
                 ],
@@ -295,12 +295,24 @@ return [
                     'icon' => 'fas fa-fw fa-braille',
                     'submenu' => [
                             [
-                                'text' => 'Parametro 1(Temperatura)',
+                                'text' => 'Temperatura',
                                 'url'  => 'Grafico1',
                                 'icon' => 'fas fa-fw fa-temperature-low'
                             ],
                             [
-                                'text'    => 'Parametro 2(Ph)',
+                                'text'    => 'Ph',
+                                 'url'     => 'Grafico2',
+                                'icon' => 'fas fa-fw fa-hand-holding-water'
+                    
+                            ],
+                            [
+                                'text'    => 'Alimentación',
+                                 'url'     => 'Grafico2',
+                                'icon' => 'fas fa-fw fa-hand-holding-water'
+                    
+                            ],
+                            [
+                                'text'    => 'Nivel de Agua',
                                  'url'     => 'Grafico2',
                                 'icon' => 'fas fa-fw fa-hand-holding-water'
                     
@@ -311,6 +323,11 @@ return [
                 ],
                 
             ],
+        ],
+        [
+            'text'    => 'Gestion de Usuarios',
+            'url'     => 'general',
+            'icon'    => 'fas fa-fw fa-users',
         ],
         /*['header' => 'labels'],
         [

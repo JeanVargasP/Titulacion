@@ -25,7 +25,7 @@ class Temperatura extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion', 'Grados'];
+    protected $fillable = ['descripcion', 'Grados', 'estado'];
 
     
 }

@@ -20,6 +20,7 @@ class TemperaturaController extends Controller
 
         $keyword = $request->get('search');
         $perPage = 25;
+        $alta = 24;
 
         if (!empty($keyword)) {
             $temperatura = Temperatura::where('descripcion', 'LIKE', "%$keyword%")
@@ -28,7 +29,9 @@ class TemperaturaController extends Controller
         } else {
             $temperatura = Temperatura::latest()->paginate($perPage);
         }
-
+        if ('Grados' == $alta){
+            $temperatura->descripcion = "alta";
+        }
         return view('temperatura.index', compact('temperatura'));
     }
 

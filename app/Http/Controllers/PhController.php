@@ -125,7 +125,7 @@ class PhController extends Controller
 
         $puntos=[];
         foreach($graficos as $grafico){
-                $puntos[]=['name' => $grafico['descripcion'], 'y' => $grafico['Nivel']];
+                $puntos[]=['name' => $grafico['updated_at'], 'y' => $grafico['Nivel']];
                 
         }
         return view('Grafico2',["data" => json_encode($puntos)]);

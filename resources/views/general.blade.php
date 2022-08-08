@@ -3,24 +3,31 @@
 @section('title', 'Titulacion')
 
 @section('content_header')
-    <h1>Reporte Temperatura</h1>
+    <h1>Titulacion</h1>
 @stop
 
 @section('content')
-    <div class="container mt-5">
-        <div class="row col-13">
-                        <canvas id="myChart" width="1000" height="200"></canvas>
+    <div class="container mt-12">
+        <div class="row col-10">
+                        <canvas id="myChart" width="400" height="200"></canvas>
                      
         </div>
-        
     </div>
+    <div class="container mt-9">
+        <div class="row col-10">
+                        <canvas id="myChart" width="400" height="200"></canvas>
+                     
+        </div>
+    </div>
+   
+
     
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
-
+/
 @section('js')
     <script>
     $(document).ready(function(){

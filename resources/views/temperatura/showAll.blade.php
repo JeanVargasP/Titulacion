@@ -31,12 +31,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Grados</th>
-                                        <th>Descripcion</th>
-                                        <th>Tiempo</th>
-                                        <th>Estado</th>
-                                        <th>Acciones</th>
+                                        <th>#</th><th>Descripcion</th><th>Grados</th><th>Tiempo</th>><th>Estado</th><th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -44,27 +39,8 @@
                                         
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->Grados }}</td>
-                                        <td>{{ $item->descripcion }}</td>
-                                      {{--   @if ($item->Grados == 30)
-                                            <div class="alert alert-danger" role="alert">
-                                                <li>{{ "la temperatura esta muy alta se recomienda activar la ventilacion" }}</li>
-                                            </div>
-                                       
-                                        @endif
-                                        --}}  
-                                      @if ($loop->iteration ==1 && $item->Grados >=32 && $item->estado == 0)
-                                            <div class="alert alert-danger" role="alert">
-                                                <li>{{ "la temperatura esta muy elevada se recomienda activar la ventilacion" }}</li>
-                                            </div>
-                                       @elseif ($loop->iteration ==1 && $item->Grados <=26 && $item->estado == 0)
-                                       <div class="alert alert-default-primary" role="alert">
-                                        <li>{{ "la temperatura esta muy baja se recomienda apagar la ventilacion" }}</li>
-                                    </div>
-                                        @endif
                                         
-                                        <td>{{ $item->updated_at }}</td>
-                                        <td>{{ $item->estado }}</td>
+                                        <td>{{ $item->descripcion }}</td><td>{{ $item->Grados }}</td><td>{{ $item->updated_at }}</td><td>{{ $item->estado }}</td>
                                         <td>
                                             <a href="{{ url('/temperatura/' . $item->id) }}" title="View Temperatura"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
                                             <form method="POST" action="{{ url('/temperatura' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
@@ -79,10 +55,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <main class="py-4">
-                                <div id="temperatura" class="alert mx-3 invisible">test</div>
-                            </main>
-
                             <div class="pagination-wrapper"> {!! $temperatura->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
@@ -92,3 +64,16 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+<script>
+        window.axios.get('/api/temperatura')
+            .then((response) =>{
+                const temperaturaElement = document.getElementById('temperatura');
+                let temperatura = response.data;
+
+
+            }
+            
+            
+            )
+

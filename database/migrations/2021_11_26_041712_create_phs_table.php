@@ -19,6 +19,7 @@ class CreatePhsTable extends Migration
             $table->timestamps();
             $table->string('descripcion')->nullable();
             $table->integer('Nivel')->nullable();
+            $table->boolean('estado')->nullable()->default(false);
             
             });
     }
