@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Temperatura;
-use App\Models\ph;
+use App\Models\Ph;
 
 use Illuminate\Support\Facades\Http;
 
