@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\temperatura;
+use App\Models\Temperatura;
 use App\Models\ph;
 
 use Illuminate\Support\Facades\Http;
